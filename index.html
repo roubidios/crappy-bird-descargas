@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Crappy Bird</title>
+  <meta name="description" content="Réplica de Flappy Bird para Android. Descarga el APK.">
+  <link rel="icon" href="icono.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --cielo: #4ec0ca;
+      --arena: #ded895;
+      --hierba: #73bf2e;
+      --hierba-clara: #9ce659;
+      --marron: #543847;
+      --naranja: #e86101;
+      --blanco: #ffffff;
+    }
+    * { box-sizing: border-box; }
+    html, body { margin: 0; min-height: 100%; }
+    body {
+      background: linear-gradient(var(--cielo) 0 70%, var(--marron) 70% calc(70% + 4px),
+                  var(--hierba) calc(70% + 4px) calc(70% + 22px), var(--arena) calc(70% + 22px));
+      background-attachment: fixed;
+      color: var(--marron);
+      font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+      display: flex;
+      justify-content: center;
+      padding: 32px 16px 48px;
+      min-height: 100vh;
+    }
+    main {
+      width: 100%;
+      max-width: 420px;
+      text-align: center;
+    }
+    .icono {
+      width: 128px;
+      height: 128px;
+      border-radius: 28px;
+      image-rendering: pixelated;
+      border: 4px solid var(--marron);
+      box-shadow: 0 6px 0 rgba(84, 56, 71, .35);
+    }
+    h1 {
+      font-family: "Press Start 2P", monospace;
+      font-size: clamp(24px, 8vw, 34px);
+      line-height: 1.2;
+      color: var(--blanco);
+      margin: 24px 0 8px;
+      text-shadow: 3px 3px 0 var(--marron), -2px -2px 0 var(--marron),
+                   2px -2px 0 var(--marron), -2px 2px 0 var(--marron);
+    }
+    .lema {
+      color: var(--blanco);
+      font-weight: 600;
+      margin: 0 0 28px;
+      text-shadow: 0 1px 0 rgba(84, 56, 71, .5);
+    }
+    .descargar {
+      display: inline-block;
+      font-family: "Press Start 2P", monospace;
+      font-size: 15px;
+      text-decoration: none;
+      color: var(--blanco);
+      background: var(--naranja);
+      border: 4px solid var(--marron);
+      border-radius: 10px;
+      padding: 18px 22px;
+      box-shadow: 0 6px 0 var(--marron);
+      transition: transform .08s, box-shadow .08s;
+    }
+    .descargar:active { transform: translateY(4px); box-shadow: 0 2px 0 var(--marron); }
+    .descargar:focus-visible { outline: 3px solid var(--blanco); outline-offset: 3px; }
+    .version { margin: 14px 0 0; font-size: 14px; color: var(--blanco); font-weight: 600; }
+    .panel {
+      background: var(--arena);
+      border: 4px solid var(--marron);
+      border-radius: 10px;
+      padding: 18px 20px;
+      margin-top: 40px;
+      text-align: left;
+      box-shadow: 0 6px 0 rgba(84, 56, 71, .35);
+    }
+    .panel h2 {
+      font-family: "Press Start 2P", monospace;
+      font-size: 13px;
+      color: var(--naranja);
+      margin: 0 0 12px;
+    }
+    .panel ol { margin: 0; padding-left: 20px; line-height: 1.55; }
+    .panel li + li { margin-top: 6px; }
+    .nota { font-size: 13px; margin: 14px 0 0; line-height: 1.5; }
+    footer { margin-top: 28px; font-size: 12px; line-height: 1.5; color: var(--marron); }
+  </style>
+</head>
+<body>
+  <main>
+    <img class="icono" src="icono.png" alt="Icono de Crappy Bird: el pájaro amarillo">
+    <h1>Crappy Bird</h1>
+    <p class="lema">Toca para volar. No toques las tuberías.</p>
+
+    <a class="descargar" href="https://github.com/roubidios/crappy-bird-descargas/releases/latest/download/CrappyBird.apk">Descargar APK</a>
+    <p class="version">Versión 0.9.0 · Android · 41 MB</p>
+
+    <section class="panel">
+      <h2>Cómo instalarlo</h2>
+      <ol>
+        <li>Toca <strong>Descargar APK</strong> desde el móvil.</li>
+        <li>Abre el archivo descargado.</li>
+        <li>Si Android lo pide, permite <strong>instalar apps de origen desconocido</strong> para tu navegador.</li>
+        <li>Pulsa <strong>Instalar</strong> y a jugar.</li>
+      </ol>
+      <p class="nota">Para actualizar, descarga la nueva versión e instálala encima: no pierdes tu récord.</p>
+    </section>
+
+    <footer>
+      Proyecto personal sin ánimo de lucro.<br>
+      Gráficos y sonidos de Flappy Bird © .GEARS (Dong Nguyen).
+    </footer>
+  </main>
+</body>
+</html>
